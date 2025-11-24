@@ -1,0 +1,12 @@
+ .product-gallery img {
+     max-width: 100%;
+     height: auto;
+     object-fit: cover;
+ }
+
+ .thumbs img {
+     cursor: pointer;
+     max-width: 70px;
+     height: 70px;
+     object-fit: cover;
+ }

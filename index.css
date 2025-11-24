@@ -1,0 +1,161 @@
+.sublogo {
+    font-weight: lighter;
+}
+
+.nav-link {
+    padding-left: 25px;
+}
+
+.new {
+    font-weight: 600;
+}
+
+.product-card {
+    border: none;
+    overflow: hidden;
+}
+
+.card,
+.card-img-top {
+    border-radius: 0;
+}
+
+/* Remove borders and rounded corners */
+.card,
+.card-img-top {
+    border: none;
+    border-radius: 0 !important;
+}
+
+/* Smooth zoom hover effect */
+.card {
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Image styling */
+.card-img-top {
+    width: 100%;
+    height: 240px;
+    /* desktop / tablet visual height */
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.card:hover .card-img-top {
+    cursor: pointer;
+    transform: scale(1.08);
+}
+
+/* Improve rendering performance hint */
+.card .card-img-top {
+    will-change: transform;
+}
+
+.homegrown-bar {
+    width: 100%;
+    padding: 08px 0;
+    font-size: clamp(18px, 4vw, 32px);
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+a:hover {
+    text-decoration: none !important;
+}
+
+/* ------ SINGLE MOBILE MEDIA QUERY ------ 
+   One universal mobile rule to cover all phones.
+   This uses max-width:768px to include small and large phones.
+*/
+@media (max-width: 768px) {
+
+    /* navbar center title: stop absolute centering, make it flow */
+    .navbar .position-absolute.top-50.start-50.translate-middle {
+        position: static !important;
+        transform: none !important;
+        left: auto !important;
+        top: auto !important;
+        margin: 0 auto;
+        text-align: center;
+        display: block;
+    }
+
+    /* reduce paddings so nothing overflows */
+    .navbar .container-fluid {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    /* reduce brand image left margin */
+    .navbar-brand img {
+        margin-left: 8px !important;
+    }
+
+    /* make carousel images less tall on phones */
+    .carousel .carousel-item img,
+    .carousel .carousel-item .d-block.w-100 {
+        max-height: 55vh;
+        height: auto;
+        object-fit: cover;
+    }
+
+    /* product card image becomes natural height to avoid stretching */
+    .card-img-top {
+        height: auto !important;
+    }
+
+    /* product title and price smaller */
+    .product-title {
+        font-size: 0.95rem;
+    }
+
+    .price {
+        font-size: 0.95rem;
+    }
+
+    /* card hover effect not needed on touch devices; keep transitions but remove scale */
+    .card:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    /* footer columns stack and remove heavy paddings */
+    footer .row.align-items-start {
+        gap: 12px 0;
+    }
+
+    footer .col-6,
+    footer .col-12,
+    footer .col-md-2,
+    footer .col-md-3 {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+    }
+
+    /* ensure images inside footer don't overflow */
+    footer img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* reduce large fonts */
+    footer h4 {
+        font-size: 1.6rem;
+    }
+
+    /* ensure container spacing fits small screens */
+    .container,
+    .container-fluid {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+}
